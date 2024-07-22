@@ -1,0 +1,16 @@
+h1 {
+    color: brown;
+    text-align: center;
+}
+body {
+    background-image: url("download.jpeg");
+}
+p {
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.name {
+    font-size: 25px;
+    line-height: 20px;
+}

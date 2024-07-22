@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    {% comment %} <link rel="stylesheet" href="project/user_details/static/style.css" > {% endcomment %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#e0c1e3 ;
+        }
+        h1 {
+            color:#47004f;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Details</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Print Details</button>
+    </form>
+</body>
+</html>

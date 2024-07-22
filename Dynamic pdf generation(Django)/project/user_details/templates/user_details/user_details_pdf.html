@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details PDF</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <table>
+            <tr>
+                <th class="label">Name</th>
+                <td>{{ user_details.name }}</td>
+            </tr>
+            <tr>
+                <th class="label">Age</th>
+                <td>{{ user_details.age }}</td>
+            </tr>
+            <tr>
+                <th class="label">Address</th>
+                <td>{{ user_details.address }}</td>
+            </tr>
+            <tr>
+                <th class="label">Phone Number</th>
+                <td>{{ user_details.phone_number }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

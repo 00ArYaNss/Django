@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
+    <h1 style="color: #333;">Edit Task</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title" style="display: block; margin-bottom: 5px;">Title:</label>
+        <input type="text" id="title" name="title" value="{{ todo.title }}" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px;"><br>
+        <label for="description" style="display: block; margin-bottom: 5px;">Description:</label>
+        <textarea id="description" name="description" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px;">{{ todo.description }}</textarea><br>
+        <label for="completed" style="display: block; margin-bottom: 5px;">Completed:</label>
+        <input type="checkbox" id="completed" name="completed" {% if todo.completed %}checked{% endif %}><br>
+        <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">Save</button>
+    </form>
+    <a href="{% url 'operations' %} " style="display: block; margin-top: 15px; text-decoration: none; color: #007bff;">Back to Operations</a>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;"> 
+    <h1 style="color: #333;">Todo List</h1>
+    <a href="{% url 'add_task' %}" style="display: block; margin-bottom: 15px; text-decoration: none; color: #007bff;">Add Task</a>
+    <ul style="list-style-type: none; padding: 0;">
+        {% for todo in todos %}
+            <li style="margin-bottom: 15px; padding: 10px; background-color: white; border: 1px solid #ddd; border-radius: 5px;">
+                <strong style="display: block; color: #333;">{{ todo.title }}
+                </strong>
+                <p style="margin: 5px 0; color: #555;">{{ todo.description }}</p>
+                <a href="{% url 'edit_task' todo.id %}" style="text-decoration: none; color: #007bff; margin-right: 10px;">Edit</a>
+                <a href="{% url 'delete_task' todo.id %}"  style="text-decoration: none; color: #dc3545;">Delete</a>
+                {% if todo.completed %}
+                    <span style="display: block; color: #28a745;">Completed</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'operations' %}" style="display: block; margin-top: 15px; text-decoration: none; color: #007bff;">Back to Operations</a>
+</body>
+</html>
